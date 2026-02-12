@@ -24,49 +24,46 @@ export const Community: React.FC = () => {
       <div className="grid lg:grid-cols-3 gap-10">
         
         {/* Local Map Placeholder - Madrid Focus */}
-        <div className="lg:col-span-2 pt-8">
-            <ComicCard title="MAPA DE MISIONES: MADRID" className="h-full bg-comic-white p-0 flex flex-col border-4 border-black">
-                {/* Inner container handles overflow so the Title (which is outside this div) is not clipped */}
-                <div className="flex flex-col h-full w-full overflow-hidden relative">
-                    <div className="bg-blue-100 w-full h-96 relative flex items-center justify-center border-b-8 border-black overflow-hidden group">
-                        <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover"></div>
-                        
-                        {/* Map Grid overlay */}
-                        <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.1}}></div>
+        <div className="lg:col-span-2">
+            <ComicCard title="MAPA DE MISIONES: MADRID" className="h-full bg-comic-white p-0 overflow-hidden flex flex-col border-4 border-black">
+                <div className="bg-blue-100 w-full h-96 relative flex items-center justify-center border-b-8 border-black overflow-hidden group">
+                    <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover"></div>
+                    
+                    {/* Map Grid overlay */}
+                    <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.1}}></div>
 
-                        <div className="text-center z-10 p-8 bg-white border-4 border-black shadow-[8px_8px_0_0_#000] transform group-hover:scale-105 transition-transform">
-                            <MapPin size={64} className="mx-auto text-comic-red mb-4 animate-bounce" />
-                            <h3 className="font-comic text-3xl">MADRID CENTRO</h3>
-                            <p className="font-body font-bold text-lg">Zonas activas detectadas</p>
-                        </div>
-                        
-                        {/* Simulated Pins */}
-                        <MapPin className="absolute top-1/3 left-1/3 text-comic-blue drop-shadow-xl transform hover:scale-125 transition-transform cursor-pointer" size={48} fill="currentColor" stroke="black" strokeWidth={2} />
-                        <MapPin className="absolute bottom-1/4 right-1/4 text-comic-yellow drop-shadow-xl transform hover:scale-125 transition-transform cursor-pointer" size={48} fill="currentColor" stroke="black" strokeWidth={2} />
+                    <div className="text-center z-10 p-8 bg-white border-4 border-black shadow-[8px_8px_0_0_#000] transform group-hover:scale-105 transition-transform">
+                        <MapPin size={64} className="mx-auto text-comic-red mb-4 animate-bounce" />
+                        <h3 className="font-comic text-3xl">MADRID CENTRO</h3>
+                        <p className="font-body font-bold text-lg">Zonas activas detectadas</p>
                     </div>
-                    <div className="p-8 bg-white flex-grow">
-                        <h4 className="font-comic text-2xl mb-4 underline decoration-4 decoration-comic-yellow">LUGARES DESTACADOS:</h4>
-                        <ul className="space-y-3 font-body text-lg font-bold">
-                            <li className="flex items-center gap-3">
-                                <div className="w-6 h-6 bg-comic-red border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
-                                Parque del Retiro (Running & Yoga)
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <div className="w-6 h-6 bg-comic-blue border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
-                                Madrid Río (Ciclismo y Patinaje)
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <div className="w-6 h-6 bg-comic-yellow border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
-                                Casa de Campo (Senderismo avanzado)
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    {/* Simulated Pins */}
+                    <MapPin className="absolute top-1/3 left-1/3 text-comic-blue drop-shadow-xl transform hover:scale-125 transition-transform cursor-pointer" size={48} fill="currentColor" stroke="black" strokeWidth={2} />
+                    <MapPin className="absolute bottom-1/4 right-1/4 text-comic-yellow drop-shadow-xl transform hover:scale-125 transition-transform cursor-pointer" size={48} fill="currentColor" stroke="black" strokeWidth={2} />
+                </div>
+                <div className="p-8 bg-white flex-grow">
+                    <h4 className="font-comic text-2xl mb-4 underline decoration-4 decoration-comic-yellow">LUGARES DESTACADOS:</h4>
+                    <ul className="space-y-3 font-body text-lg font-bold">
+                        <li className="flex items-center gap-3">
+                            <div className="w-6 h-6 bg-comic-red border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
+                            Parque del Retiro (Running & Yoga)
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <div className="w-6 h-6 bg-comic-blue border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
+                            Madrid Río (Ciclismo y Patinaje)
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <div className="w-6 h-6 bg-comic-yellow border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
+                            Casa de Campo (Senderismo avanzado)
+                        </li>
+                    </ul>
                 </div>
             </ComicCard>
         </div>
 
         {/* Sidebar: Professional & Events */}
-        <div className="space-y-10 pt-8">
+        <div className="space-y-10">
             {/* Featured Professional */}
             <ComicCard title="MENTOR DESTACADO" color="bg-comic-blue" className="text-white">
                 <div className="flex flex-col items-center text-center">
@@ -105,8 +102,8 @@ export const Community: React.FC = () => {
       <div className="py-12 border-t-8 border-dashed border-black">
           <h3 className="font-comic text-5xl text-center mb-12 uppercase">Historias de Éxito</h3>
           <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-white border-4 border-black p-8 relative shadow-[8px_8px_0_0_#000] md:rotate-1 mb-8 md:mb-0">
-                  <div className="absolute -left-8 top-8 w-16 h-16 bg-comic-red border-4 border-black rounded-full flex items-center justify-center text-white shadow-lg z-10">
+              <div className="bg-white border-4 border-black p-8 relative shadow-[8px_8px_0_0_#000] transform md:rotate-1 mt-6 md:mt-0">
+                  <div className="absolute -top-6 left-4 md:-left-8 md:top-8 w-16 h-16 bg-comic-red border-4 border-black rounded-full flex items-center justify-center text-white shadow-lg z-10">
                       <Star fill="white" size={32}/>
                   </div>
                   <div className="relative z-0">
@@ -122,8 +119,8 @@ export const Community: React.FC = () => {
                   </div>
               </div>
               
-              <div className="bg-white border-4 border-black p-8 relative shadow-[8px_8px_0_0_#000] md:-rotate-1">
-                  <div className="absolute -right-8 top-8 w-16 h-16 bg-comic-yellow border-4 border-black rounded-full flex items-center justify-center text-black shadow-lg z-10">
+              <div className="bg-white border-4 border-black p-8 relative shadow-[8px_8px_0_0_#000] transform md:-rotate-1 mt-10 md:mt-0">
+                  <div className="absolute -top-6 right-4 md:-right-8 md:top-8 w-16 h-16 bg-comic-yellow border-4 border-black rounded-full flex items-center justify-center text-black shadow-lg z-10">
                       <Star fill="black" size={32}/>
                   </div>
                   <div className="relative z-0">
