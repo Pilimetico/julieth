@@ -56,7 +56,7 @@ export const Tools: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
       <div className="text-center">
-        <h2 className="font-comic text-6xl md:text-7xl text-stroke text-comic-purple drop-shadow-[4px_4px_0_#000]">
+        <h2 className="font-comic text-6xl md:text-7xl text-stroke text-comic-purple">
             HERRAMIENTAS DE PODER
         </h2>
       </div>

@@ -17,85 +17,44 @@ export const Community: React.FC = () => {
         <h2 className="font-comic text-6xl md:text-8xl text-stroke text-comic-blue drop-shadow-[6px_6px_0_#000]">TU ALIANZA</h2>
         <div className="mt-4 flex justify-center items-center gap-2">
             <Users className="text-comic-dark" size={32} />
-            <p className="text-2xl font-action">Encuentra tu Party y lugares para entrenar en Madrid.</p>
+            <p className="text-2xl font-action">Encuentra tu Party y lugares para entrenar.</p>
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-2 gap-10">
         
-        {/* Local Map Placeholder - Madrid Focus */}
-        <div className="lg:col-span-2">
-            <ComicCard title="MAPA DE MISIONES: MADRID" className="h-full bg-comic-white p-0 overflow-hidden flex flex-col border-4 border-black">
-                <div className="bg-blue-100 w-full h-96 relative flex items-center justify-center border-b-8 border-black overflow-hidden group">
-                    <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover"></div>
-                    
-                    {/* Map Grid overlay */}
-                    <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.1}}></div>
-
-                    <div className="text-center z-10 p-8 bg-white border-4 border-black shadow-[8px_8px_0_0_#000] transform group-hover:scale-105 transition-transform">
-                        <MapPin size={64} className="mx-auto text-comic-red mb-4 animate-bounce" />
-                        <h3 className="font-comic text-3xl">MADRID CENTRO</h3>
-                        <p className="font-body font-bold text-lg">Zonas activas detectadas</p>
-                    </div>
-                    
-                    {/* Simulated Pins */}
-                    <MapPin className="absolute top-1/3 left-1/3 text-comic-blue drop-shadow-xl transform hover:scale-125 transition-transform cursor-pointer" size={48} fill="currentColor" stroke="black" strokeWidth={2} />
-                    <MapPin className="absolute bottom-1/4 right-1/4 text-comic-yellow drop-shadow-xl transform hover:scale-125 transition-transform cursor-pointer" size={48} fill="currentColor" stroke="black" strokeWidth={2} />
+        {/* Featured Professional */}
+        <ComicCard title="MENTOR DESTACADO" color="bg-comic-blue" className="text-white h-full">
+            <div className="flex flex-col items-center text-center h-full justify-center">
+                <div className="w-32 h-32 bg-white rounded-full border-4 border-black mb-4 overflow-hidden relative shadow-[4px_4px_0_0_#000]">
+                        <Stethoscope size={60} className="text-comic-dark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                 </div>
-                <div className="p-8 bg-white flex-grow">
-                    <h4 className="font-comic text-2xl mb-4 underline decoration-4 decoration-comic-yellow">LUGARES DESTACADOS:</h4>
-                    <ul className="space-y-3 font-body text-lg font-bold">
-                        <li className="flex items-center gap-3">
-                            <div className="w-6 h-6 bg-comic-red border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
-                            Parque del Retiro (Running & Yoga)
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <div className="w-6 h-6 bg-comic-blue border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
-                            Madrid Río (Ciclismo y Patinaje)
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <div className="w-6 h-6 bg-comic-yellow border-2 border-black shadow-[2px_2px_0_0_#000]"></div> 
-                            Casa de Campo (Senderismo avanzado)
-                        </li>
-                    </ul>
-                </div>
-            </ComicCard>
-        </div>
+                <h3 className="font-comic text-2xl mb-1 text-white text-stroke-sm">Dra. Julieth Uribe</h3>
+                <p className="font-action text-comic-yellow text-lg mb-2">Medicina Deportiva</p>
+                <p className="font-body text-sm leading-tight mb-4">
+                    "El movimiento es la mejor medicina preventiva. ¡Únete a nuestra comunidad y transforma tu salud!"
+                </p>
+                <ComicButton variant="primary" className="text-sm py-1 px-4 w-full">PERFIL PROFESIONAL</ComicButton>
+            </div>
+        </ComicCard>
 
-        {/* Sidebar: Professional & Events */}
-        <div className="space-y-10">
-            {/* Featured Professional */}
-            <ComicCard title="MENTOR DESTACADO" color="bg-comic-blue" className="text-white">
-                <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 bg-white rounded-full border-4 border-black mb-4 overflow-hidden relative shadow-[4px_4px_0_0_#000]">
-                         <Stethoscope size={60} className="text-comic-dark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                    </div>
-                    <h3 className="font-comic text-2xl mb-1 text-white text-stroke-sm">Dra. Julieth Uribe</h3>
-                    <p className="font-action text-comic-yellow text-lg mb-2">Medicina Deportiva</p>
-                    <p className="font-body text-sm leading-tight mb-4">
-                        "El movimiento es la mejor medicina preventiva. ¡Únete a nuestra comunidad y transforma tu salud!"
-                    </p>
-                    <ComicButton variant="primary" className="text-sm py-1 px-4 w-full">PERFIL PROFESIONAL</ComicButton>
-                </div>
-            </ComicCard>
-
-            <ComicCard title="PRÓXIMOS EVENTOS" color="bg-comic-yellow">
-                <ul className="space-y-4">
-                    {events.map((e, i) => (
-                        <li key={i} className="bg-white border-4 border-black p-3 flex justify-between items-center shadow-[4px_4px_0_0_#000] hover:-translate-y-1 transition-transform cursor-pointer group">
-                            <div>
-                                <h5 className="font-comic text-lg leading-none group-hover:text-comic-blue transition-colors">{e.title}</h5>
-                                <span className="text-xs font-body font-bold text-gray-600 flex items-center gap-1 mt-1"><MapPin size={10}/> {e.loc}</span>
-                            </div>
-                            <div className="bg-black text-white p-1 w-12 font-comic text-center leading-none border-2 border-white shadow-sm flex-shrink-0">
-                                <span className="text-lg block">{e.date.split(' ')[0]}</span>
-                                <span className="text-[0.6rem] uppercase">{e.date.split(' ')[1]}</span>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </ComicCard>
-        </div>
+        {/* Events */}
+        <ComicCard title="PRÓXIMOS EVENTOS" color="bg-comic-yellow" className="h-full">
+            <ul className="space-y-4">
+                {events.map((e, i) => (
+                    <li key={i} className="bg-white border-4 border-black p-3 flex justify-between items-center shadow-[4px_4px_0_0_#000] hover:-translate-y-1 transition-transform cursor-pointer group">
+                        <div>
+                            <h5 className="font-comic text-lg leading-none group-hover:text-comic-blue transition-colors">{e.title}</h5>
+                            <span className="text-xs font-body font-bold text-gray-600 flex items-center gap-1 mt-1"><MapPin size={10}/> {e.loc}</span>
+                        </div>
+                        <div className="bg-black text-white p-1 w-12 font-comic text-center leading-none border-2 border-white shadow-sm flex-shrink-0">
+                            <span className="text-lg block">{e.date.split(' ')[0]}</span>
+                            <span className="text-[0.6rem] uppercase">{e.date.split(' ')[1]}</span>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </ComicCard>
       </div>
 
       {/* Testimonials */}
