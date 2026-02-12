@@ -54,9 +54,9 @@ export const Home: React.FC<HomeProps> = ({ setPage }) => {
                 <div className="absolute inset-0 bg-comic-red rounded-full border-4 border-black transform translate-x-4 translate-y-4"></div>
                 <div className="absolute inset-0 bg-comic-yellow rounded-full border-4 border-black transform -translate-x-4 -translate-y-4"></div>
                 <img 
-                    src="https://daleclick.megarifas.uy/wp-content/uploads/2026/02/ChatGPT-Image-11-feb-2026-06_24_08-p.m._Easy-Resize.com_.jpg" 
+                    src="https://daleclick.megarifas.uy/wp-content/uploads/2026/02/630456213_1397100605066339_7755263241029028324_n.jpg" 
                     alt="Active Hero" 
-                    className="relative w-full h-full object-cover rounded-full border-8 border-black grayscale-[50%] contrast-125 hover:grayscale-0 transition-all duration-500 z-10"
+                    className="relative w-full h-full object-cover rounded-full border-8 border-black grayscale-[20%] contrast-125 hover:grayscale-0 transition-all duration-500 z-10"
                 />
                 
                 {/* Speech Bubble */}
