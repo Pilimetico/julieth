@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JulietApp - Tu Aventura Fitness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Komika+Axis&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Pattern for Comic Effect */
+      .bg-halftone {
+        background-image: radial-gradient(circle, #000 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.1;
+      }
+      .comic-shadow {
+        box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+      }
+      .comic-shadow-hover:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+      }
+      .font-comic {
+        font-family: 'Bangers', cursive;
+        letter-spacing: 1px;
+      }
+      .font-action {
+        font-family: 'Komika Axis', sans-serif;
+      }
+      .font-body {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .clip-diagonal {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'comic-yellow': '#FFD93D',
+              'comic-red': '#FF6B6B',
+              'comic-blue': '#4D96FF',
+              'comic-dark': '#1a1a1a',
+              'comic-white': '#f4f4f4',
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-comic-white text-comic-dark font-body">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
